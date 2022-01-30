@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body  >
+  <style>
+    body {
+      background-image: url('https://media.threatpost.com/wp-content/uploads/sites/103/2019/09/04100037/deepfake-AI.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+<div class="container">
+  <h1 class="jumbotron bg-primary">Urban Sound Classfication</h1>
+  <br><br>
+
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+	{% if prediction %}
+	<h2 class="jumbotron " >Model Preiction :  <i> {{prediction}} </i> Class</h2>
+
+	{% endif %}
+  </form>
+  <form method="get" action="{{url_for('root')}}">
+    <button> Retry </button>
+  </form>
+
+</div>
+
+</body>
+</html>
